@@ -1,0 +1,15 @@
+# Routes 
+- Pub Admin
+ - Auth
+  - a/auth/login [Done]
+  - a/auth/signup [Done]
+  - a/auth/logout [Done]
+ - Manage Event 
+  - a/event/create [Done]
+  - a/event/view [Done]
+  - a/event/delete [Done]
+- Users [ Attendees ]
+ - u/user/register
+ - u/user/questionnair 
+- Matches
+ - a/user/match
