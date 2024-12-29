@@ -9,7 +9,7 @@ const app = express();
 const PORT = 7777;
 // middlewares for frontend 
 app.use(cors({
-    origin: 'http://localhost:3000', 
+    origin: 'https://matched-livid.vercel.app', 
     credentials: true 
   }));
 
