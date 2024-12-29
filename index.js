@@ -10,7 +10,9 @@ const PORT = 7777;
 // middlewares for frontend 
 app.use(cors({
     origin: 'https://matched-livid.vercel.app', 
-    credentials: true 
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Allowed methods
+  allowedHeaders: ['Content-Type', 'Authorization']
   }));
 
 // middlewares 
