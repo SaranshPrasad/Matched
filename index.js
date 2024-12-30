@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 7777;
 // middlewares for frontend 
 const corsOptions = { origin: 'https://matchedfrontend.onrender.com', methods: ['GET', 'POST', 'PUT', 'DELETE'],
                      allowedHeaders: ['Content-Type', 'Authorization'], credentials: true }; 
-app.use(cors(corsOptions);
+app.use(cors(corsOptions));
 
 // middlewares 
 app.use(cookieParser());
