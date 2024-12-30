@@ -2,8 +2,8 @@ const express = require("express");
 const Event = require("../models/event");
 const eventRouter = express.Router();
 const {userAuth} = require("../middleware/auth");
-
-
+const cookieParser = require("cookie-parser");
+eventRouter.use(cookieParser());
 eventRouter.use(express.json());
 
 eventRouter.post("/event/create", userAuth, async (req, res)=> {
