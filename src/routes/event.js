@@ -6,7 +6,7 @@ const cookieParser = require("cookie-parser");
 eventRouter.use(cookieParser());
 eventRouter.use(express.json());
 
-eventRouter.post("/event/create", async (req, res)=> {
+eventRouter.post("/event/create",userAuth, async (req, res)=> {
     const {event_name} = req.body;
     const {_id} = req.user;
     try {
@@ -20,7 +20,7 @@ eventRouter.post("/event/create", async (req, res)=> {
     }
 });
 
-eventRouter.get("/all/event",  async (req, res) => {
+eventRouter.get("/all/event",userAuth,  async (req, res) => {
     const {_id} = req.user;
     try {
         const eventData = await Event.find({owner_id:_id}).populate("owner_id", "username");
@@ -35,7 +35,7 @@ eventRouter.get("/all/event",  async (req, res) => {
     }
 });
 
-eventRouter.get("/event/:event_id", async (req, res) => {
+eventRouter.get("/event/:event_id",userAuth, async (req, res) => {
     const {event_id} = req.params;
     const loggedUser = req.user._id;
     try {
@@ -53,7 +53,7 @@ eventRouter.get("/event/:event_id", async (req, res) => {
     }
 });
 
-eventRouter.delete("/event/:event_id",async (req, res) => {
+eventRouter.delete("/event/:event_id",userAuth,async (req, res) => {
     const loggedInUserId = req.user._id;
     const {event_id} = req.params;
     try {
