@@ -6,7 +6,7 @@ const {connectDB} = require("./src/config/database");
 
 // app init
 const app = express();
-const PORT = 7777;
+const PORT = process.env.PORT || 7777;
 // middlewares for frontend 
 app.use(cors({
     origin: 'https://matched-livid.vercel.app', 
@@ -24,7 +24,6 @@ app.use(express.json());
 
 connectDB().then(() =>{
     console.log("Database connection done !");
-    console.log(`Server is up at url :- http://localhost:${PORT}`);
 }).catch((err) =>{
     console.error("Database connection issue : ", err.message);
 });
