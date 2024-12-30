@@ -48,8 +48,8 @@ authRouter.post("/auth/login", async (req, res) => {
             const expiresIn7Days = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
             res.cookie('token', token, {
       httpOnly: true, // Prevents client-side JavaScript from accessing the cookie
-      secure: process.env.NODE_ENV === 'production', // Only sent over HTTPS in production
-      sameSite: 'Strict', // Ensures cookie is not sent in cross-origin requests
+      secure: true, // Only sent over HTTPS in production
+      sameSite: 'none', // Ensures cookie is not sent in cross-origin requests
       expires: expiresIn7Days, 
     });
             res.status(200).json({message:"User logged In successfully !!" , user, token:token});
