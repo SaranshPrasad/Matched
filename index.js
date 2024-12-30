@@ -9,7 +9,8 @@ const app = express();
 const PORT = process.env.PORT || 7777;
 // middlewares for frontend 
 app.use(cors({
-    credentials: true
+    credentials: true,
+    origin: "https://matchedfrontend.onrender.com"
   }));
 
 // middlewares 
