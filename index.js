@@ -10,8 +10,7 @@ const PORT = process.env.PORT || 7777;
 // middlewares for frontend 
 app.use(cors({
     credentials: true,
-    origin: "https://matchedfrontend.onrender.com/",
-    methods: ["GET","POST","DELETE","PATCH","PUT"]
+    origin: "https://matchedfrontend.onrender.com/"
   }));
 
 // middlewares 
